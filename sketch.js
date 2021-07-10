@@ -35,15 +35,15 @@ function setup() {
   World.add(world,ball);
   fill("white");
 
-  ground = Bodies.rectangle(400,380,800,15,options);
+  ground = Bodies.rectangle(400,380,1000,10,options);
   World.add(world,ground);
   fill("white");
 
-  ground1 = Bodies.rectangle(600,360,400,20,options);
+  ground1 = Bodies.rectangle(600,360,10,50,options);
   World.add(world,ground1);
   fill("white");
 
-  ground2 = Bodies.rectangle(700,360,400,20,options);
+  ground2 = Bodies.rectangle(700,360,10,50,options);
   World.add(world,ground2);
   fill("white");
 
@@ -57,14 +57,16 @@ function setup() {
 
 function draw() {
   background("black");
+
   ellipse(ball.position.x,ball.position.y,15);
+  //ellipseMode(Radius);
 
 fill("white");
-rect(ground.position.x,ground.position.y,800,10);
+rect(ground.position.x,ground.position.y,1000,10);
 rect(ground1.position.x,ground1.position.y,10,50);
 rect(ground2.position.x,ground2.position.y,10,50); 
 
-  keyPressed();
+  
   
   drawSprites();
  
@@ -74,7 +76,7 @@ function keyPressed(){
 	if(keyCode == UP_ARROW){
 
 	//write code here to applyForce on ball body
-  Matter.Body.applyForce(ball,{x:0,y:0},{x:0,y:0.05});
+  Matter.Body.applyForce(ball,{x:0,y:0},{x:0.5,y:0.05});
 }
 
 }
